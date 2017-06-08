@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: yes
+  gather_facts: no
+  tasks:
+  - name: "Install and configure the necessary dependencies"
+    apt:
+      name: openssh-server
+
+- hosts: all
+  become: yes
+  roles:
+  - role: znz.sshd
